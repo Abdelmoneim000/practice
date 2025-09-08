@@ -1,10 +1,13 @@
 export default function Questions(props) {
+    
+
     return (
-        <form action="">
+        <form action={(FormData) => props.onSubmit(FormData)}>
             {props.page === 1 && <div className="page">
-                <p>What's your full name?</p>
+                <label>What's your full name?
                 <p>"Please enter your first and last name as they appear on your ID."</p>
                 <input type="text" name="name" />
+                </label>
                 <br />
 
                 <div className="radio-btns">
@@ -36,16 +39,12 @@ export default function Questions(props) {
                         <input type="checkbox" name="devices" value="Tablet"/>
                         Tablet
                     </label>
-                    <label>
-                        <input type="checkbox" name="devices" value="All" />
-                        All
-                    </label>
                 </div>
             </div>}
 
             {props.page === 2 && <div className="page">
                 <label className="date">Select your date of birth
-                    <input type="date" />
+                    <input type="date" name="birthDate"/>
                 </label>
                 <br />
                 <label htmlFor="study-hrs">How many hours do you study per week?</label>
@@ -76,7 +75,20 @@ export default function Questions(props) {
                     </label>
                 </div>
             </div>}
+            <br />
 
+            {props.page === 3 && <div className="page">
+                <label htmlFor="education">What is your highest level of education?</label>
+                <select name="educationLevel" id="education" defaultValue="">
+                    <option value="" disabled>-- Choose your education level --</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor's degree">Bachelor's degree</option>
+                    <option value="Master degree">Master degree</option>
+                    <option value="Phd">Phd</option>
+                </select>
+            </div>}
+            
+            <button className="submit">Submit</button>
         </form>
     )
 }
