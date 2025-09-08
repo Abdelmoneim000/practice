@@ -1,0 +1,56 @@
+/* label {
+  display: block;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body #root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+
+input {
+  margin: 10px 0;
+}
+
+.radio-btns {
+  display: flex;
+  flex-direction: column;
+}
+label{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.check-box {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.next, .submit {
+   position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.prev {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
