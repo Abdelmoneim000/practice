@@ -38,16 +38,19 @@ export default function Questions(props) {
                     <p>"choose all possible choices"</p>
                     <label>
                         <input type="checkbox"  name="devices" value="Laptop"
+                                checked={props.inputData.devices.Laptop}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         Laptop
                     </label>
                     <label>
                         <input type="checkbox" name="devices" value="Smartphone"
+                                checked={props.inputData.devices.Smartphone}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         Smartphone
                     </label>
                     <label>
                         <input type="checkbox" name="devices" value="Tablet"
+                                checked={props.inputData.devices.Tablet}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         Tablet
                     </label>
@@ -76,21 +79,25 @@ export default function Questions(props) {
                     <p>"choose all possible choices"</p>
                     <label>
                         <input type="checkbox"  name="languages" value="Arabic"
+                                checked={props.inputData.languages.Arabic}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         Arabic
                     </label>
                     <label>
                         <input type="checkbox" name="languages" value="English"
+                                checked={props.inputData.languages.English}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         English
                     </label>
                     <label>
                         <input type="checkbox" name="languages" value="French"
+                                checked={props.inputData.languages.French}
                                 onChange={(event) => props.handleOnChange(event)}/>
                         French
                     </label>
                     <label>
                         <input type="checkbox" name="languages" value="Spanich"
+                                checked={props.inputData.languages.Spanich}
                                 onChange={(event) => props.handleOnChange(event)} />
                         Spanich
                     </label>

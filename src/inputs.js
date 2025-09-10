@@ -2,19 +2,19 @@ export default
     {
         name: "",
         gender: "",
-        devices: [{
-            name: "Laptop",
-            checked: false},
-            {
-                name: "Smartphone",
-                checked: false},
-            {
-                name: "Tablet",
-                checked: false
+        devices: {
+            Laptop : false,
+            Smartphone : false,
+            Tablet : false
             }
-            ],
+            ,
         birthDate: "",
         studyHours: "",
-        languages: [],
+        languages: {
+            Arabic: false,
+            English: false,
+            French: false,
+            Spanich: false
+        },
         educationLevel: ""
     }

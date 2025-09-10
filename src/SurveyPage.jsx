@@ -11,13 +11,17 @@ export default function SurveyPage() {
 
    function handleOnChange(event) {
         const {value, name} = event.currentTarget;
-        event.currentTarget.type === "checkbox" ? setInputData(prevInput =>
-          prevInput.map(device => device.name === value ? ({...device, checked: !device.checked})
-                                      : ({...device})))
-         : setInputData(prevInput => ({
+        event.currentTarget.type === "checkbox" ? 
+        setInputData(prevInput => ({
+  ...prevInput,
+  [name]: {
+    ...prevInput[name],
+    [value]: !prevInput[name][value]
+  }
+}))   : setInputData(prevInput => ({
           ...prevInput,
           [name] : value}))
-    }
+}
 
   function handleNext() {
     setCurrentPage(prevPage => prevPage + 1);
