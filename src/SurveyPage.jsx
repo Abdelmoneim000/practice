@@ -7,11 +7,20 @@ import React from "react";
 export default function SurveyPage() {
 
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [formData, setFormData] = React.useState(inputs);
+  const [inputData, setInputData] = React.useState(inputs);
+
+   function handleOnChange(event) {
+        const {value, name} = event.currentTarget;
+        event.currentTarget.type === "checkbox" ? setInputData(prevInput =>
+          prevInput.map(device => device.name === value ? ({...device, checked: !device.checked})
+                                      : ({...device})))
+         : setInputData(prevInput => ({
+          ...prevInput,
+          [name] : value}))
+    }
 
   function handleNext() {
     setCurrentPage(prevPage => prevPage + 1);
-    console.log(currentPage);
   }
 
   function handlePrev() {
@@ -20,12 +29,14 @@ export default function SurveyPage() {
 
   function signUp(formData) {
         const data = Object.fromEntries(formData);
-        console.log(data);
     }
 
   return (
     <main>
-      <Questions page={currentPage} onSubmit={signUp}/>
+      <Questions page={currentPage} 
+                  onSubmit={signUp}
+                  handleOnChange={handleOnChange}
+                  inputData={inputData}/>
       <NavButtons page={currentPage} pages={3} handlePrev={handlePrev} handleNext={handleNext} />
     </main>
   )
